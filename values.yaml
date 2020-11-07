@@ -1,0 +1,20 @@
+
+
+rollingUpdate:
+  maxSurge: 1
+  maxUnavailable: 1
+
+
+
+replicas: 3
+
+
+pod:
+  image: namnguyen2307/index
+  containerPort: 80
+
+svc:
+  port: 8080
+  targetPort: 80
+
+label: demo

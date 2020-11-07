@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  labels: {{  include "labels" . | indent 4 }}
+spec:
+  replicas: {{ .Values.replicas }}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate: {{  include "rollingUpdate" . | indent 6 }}
+  selector:
+    matchLabels: {{  include "labels" . | indent 6 }}
+  template:
+    metadata:
+      labels: {{  include "labels" . | indent 8 }}
+    spec:
+      containers:
+        - name: {{.Release.Name }}
+          image: {{.Values.pod.image}}
+          imagePullPolicy: Always
+          ports:
+            - containerPort: {{.Values.pod.containerPort}}
