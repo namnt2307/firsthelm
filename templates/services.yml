@@ -5,4 +5,4 @@ metadata:
   name: index
 spec: {{  include "ClusterIP" . | indent 2 }}
   selector:
-    app: {{ .Values.label }}
+    app: index

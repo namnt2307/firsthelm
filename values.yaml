@@ -16,5 +16,3 @@ pod:
 svc:
   port: 8080
   targetPort: 80
-
-label: demo

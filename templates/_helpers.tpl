@@ -1,14 +1,7 @@
-{{/* 
-labels 
-*/}}
-{{- define "labels"  }} 
-app: {{.Values.label}}
-{{- end}}
 
 {{/* 
 rollingUpdate 
 */}}
-
 {{-  define "rollingUpdate"  }} 
 maxSurge: {{ .Values.rollingUpdate.maxSurge }}
 maxUnavailable: {{ .Values.rollingUpdate.maxUnavailable }}
